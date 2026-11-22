@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const docs = await getCollection('docs');
+const counts = new Map<string, number>();
+for (const doc of docs) {
+  const category = doc.data.category || '未分类';
+  counts.set(category, (counts.get(category) || 0) + 1);
+}
+const categories = [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'zh-CN'));
+---
+
+<BaseLayout title="分类 · VetBrain">
+  <div class="page">
+    <h1>分类浏览</h1>
+    <p class="meta-line">按你放入 <code>content/raw/分类名/</code> 的目录自动归类。</p>
+    <div class="grid" style="margin-top: 24px;">
+      {categories.map(([name, count]) => (
+        <a class="card" href={`/categories/${encodeURIComponent(name)}/`}>
+          <h3>{name}</h3>
+          <div class="card-meta">{count} 篇文档</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

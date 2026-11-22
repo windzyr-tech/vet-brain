@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  const tags = new Set<string>();
+  for (const doc of docs) for (const tag of doc.data.tags) tags.add(tag);
+  return [...tags].map((tag) => ({ params: { tag }, props: { tag } }));
+}
+
+const { tag } = Astro.props;
+const docs = (await getCollection('docs')).filter((doc) => doc.data.tags.includes(tag));
+---
+
+<BaseLayout title={`#${tag} · VetBrain`}>
+  <div class="page">
+    <h1>#{tag}</h1>
+    <p class="meta-line">{docs.length} 篇文档</p>
+    <div class="grid" style="margin-top: 24px;">
+      {docs.map((doc) => (
+        <a class="card" href={`/docs/${encodeURIComponent(doc.id)}/`}>
+          <h3>{doc.data.title}</h3>
+          <p>{doc.data.description || '暂无摘要'}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

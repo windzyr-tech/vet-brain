@@ -1,0 +1,75 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map((doc) => ({
+    params: { id: doc.id },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const { Content } = await render(doc);
+const allDocs = await getCollection('docs');
+
+const related = allDocs
+  .filter((other) => other.id !== doc.id)
+  .map((other) => ({
+    doc: other,
+    score: other.data.concepts.filter((c) => doc.data.concepts.includes(c)).length,
+  }))
+  .filter((item) => item.score > 0)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 6);
+---
+
+<BaseLayout title={`${doc.data.title} · VetBrain`} description={doc.data.description}>
+  <article class="page page-narrow" data-pagefind-body>
+    <div class="doc-header">
+      <a href={`/categories/${encodeURIComponent(doc.data.category)}/`} class="badge">{doc.data.category}</a>
+      <h1 data-pagefind-meta="title">{doc.data.title}</h1>
+      <div class="meta-line">
+        {doc.data.date?.toISOString().slice(0, 10)}
+        {doc.data.sourceName && <> · 来源：{doc.data.sourceName}</>}
+      </div>
+
+      <div hidden>
+        <span data-pagefind-meta="category">{doc.data.category}</span>
+        <span data-pagefind-filter="category">{doc.data.category}</span>
+        {doc.data.tags.map((tag) => <span data-pagefind-filter="tag">{tag}</span>)}
+      </div>
+
+      {(doc.data.tags.length > 0 || doc.data.concepts.length > 0) && (
+        <div style="margin-top: 14px;">
+          {doc.data.tags.map((tag) => <span class="tag">#{tag}</span>)}
+        </div>
+      )}
+    </div>
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {doc.data.source && (
+      <p style="margin-top: 18px;">
+        <a href={doc.data.source} target="_blank" rel="noopener">下载原始文档 ↗</a>
+      </p>
+    )}
+
+    {related.length > 0 && (
+      <section class="related">
+        <h2 class="section-title">相关笔记</h2>
+        <ul>
+          {related.map(({ doc: other, score }) => (
+            <li>
+              <a href={`/docs/${encodeURIComponent(other.id)}/`}>{other.data.title}</a>
+              <span class="meta-line"> · {score} 个共同概念</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </article>
+</BaseLayout>

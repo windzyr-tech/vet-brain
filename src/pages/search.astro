@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const isProd = import.meta.env.PROD;
+---
+
+<BaseLayout title="检索 · VetBrain">
+  <div class="page">
+    <h1>检索知识</h1>
+    <p class="meta-line">支持中文分词，全文索引在构建时由 Pagefind 生成，检索完全在浏览器端完成。</p>
+
+    <div class="search-panel" style="margin-top: 24px;">
+      {isProd ? (
+        <>
+          <pagefind-config faceted preload></pagefind-config>
+          <div class="graph-toolbar">
+            <pagefind-filter-dropdown filter="category" label="分类"></pagefind-filter-dropdown>
+            <pagefind-input placeholder="输入关键词，例如：急性肾损伤"></pagefind-input>
+          </div>
+          <pagefind-summary></pagefind-summary>
+          <pagefind-results></pagefind-results>
+        </>
+      ) : (
+        <p>检索索引只在生产构建后生成。请先运行 <code>npm run build</code> 再访问本站。</p>
+      )}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import KnowledgeGraph from '../components/KnowledgeGraph.astro';
+---
+
+<BaseLayout title="知识图谱 · VetBrain">
+  <div class="page">
+    <h1>知识图谱</h1>
+    <p class="meta-line">
+      节点是文档与概念，连线代表“文档包含概念”或“概念共同出现”。数据由 <code>npm run graph</code> 从你的文档中生成。
+    </p>
+    <KnowledgeGraph />
+    <p class="graph-hint">拖拽节点可调整布局，滚轮缩放；点击文档节点打开原文，点击概念节点可高亮关联并检索。</p>
+  </div>
+</BaseLayout>

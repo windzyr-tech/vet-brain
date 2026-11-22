@@ -1,0 +1,2017 @@
+{
+  "generatedAt": "2026-11-22T10:54:17.528Z",
+  "nodes": [
+    {
+      "id": "doc:1-introduction-pdf",
+      "label": "兽医局部区域麻醉：三天继续教育课程",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/1-introduction-pdf/",
+      "degree": 11
+    },
+    {
+      "id": "concept:超声检查",
+      "label": "超声检查",
+      "type": "concept",
+      "category": "概念",
+      "degree": 16
+    },
+    {
+      "id": "concept:血液学",
+      "label": "血液学",
+      "type": "concept",
+      "category": "概念",
+      "degree": 5
+    },
+    {
+      "id": "concept:肝功能",
+      "label": "肝功能",
+      "type": "concept",
+      "category": "概念",
+      "degree": 34
+    },
+    {
+      "id": "doc:1-introduction-pptx",
+      "label": "兽医局部区域麻醉",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/1-introduction-pptx/",
+      "degree": 11
+    },
+    {
+      "id": "doc:1-脊椎-pdf",
+      "label": "脊柱与胸廓骨骼",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/1-%E8%84%8A%E6%A4%8E-pdf/",
+      "degree": 0
+    },
+    {
+      "id": "doc:10-新咀嚼肌-呼吸肌-腹壁肌-腹股沟管-pdf",
+      "label": "咀嚼肌、呼吸肌与腹壁肌 .",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/10-%E6%96%B0%E5%92%80%E5%9A%BC%E8%82%8C-%E5%91%BC%E5%90%B8%E8%82%8C-%E8%85%B9%E5%A3%81%E8%82%8C-%E8%85%B9%E8%82%A1%E6%B2%9F%E7%AE%A1-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:11-心脏-pdf",
+      "label": "心脏与心包（含胸膜与纵隔）",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/11-%E5%BF%83%E8%84%8F-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:12-血液循环-pdf",
+      "label": "血液循环与心脏",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/12-%E8%A1%80%E6%B6%B2%E5%BE%AA%E7%8E%AF-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:13-新主动脉和腔静脉-pdf",
+      "label": "主动脉弓、主动脉、前腔静脉与后腔静脉",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/13-%E6%96%B0%E4%B8%BB%E5%8A%A8%E8%84%89%E5%92%8C%E8%85%94%E9%9D%99%E8%84%89-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:14-前肢血供-pdf",
+      "label": "前肢的血供",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/14-%E5%89%8D%E8%82%A2%E8%A1%80%E4%BE%9B-pdf/",
+      "degree": 12
+    },
+    {
+      "id": "concept:猫",
+      "label": "猫",
+      "type": "concept",
+      "category": "概念",
+      "degree": 15
+    },
+    {
+      "id": "concept:犬",
+      "label": "犬",
+      "type": "concept",
+      "category": "概念",
+      "degree": 17
+    },
+    {
+      "id": "doc:15-后肢血供-pdf",
+      "label": "后肢血液供应",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/15-%E5%90%8E%E8%82%A2%E8%A1%80%E4%BE%9B-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:16-颅骨-1-pdf",
+      "label": "颅骨",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/16-%E9%A2%85%E9%AA%A8-1-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:17-头颈部血供-pdf",
+      "label": "头颈部血液供应",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/17-%E5%A4%B4%E9%A2%88%E9%83%A8%E8%A1%80%E4%BE%9B-pdf/",
+      "degree": 18
+    },
+    {
+      "id": "concept:解剖",
+      "label": "解剖",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:头颈部",
+      "label": "头颈部",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:血液供应",
+      "label": "血液供应",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:甲状腺",
+      "label": "甲状腺",
+      "type": "concept",
+      "category": "概念",
+      "degree": 9
+    },
+    {
+      "id": "doc:18-淋巴系统-pdf",
+      "label": "淋巴系统",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/18-%E6%B7%8B%E5%B7%B4%E7%B3%BB%E7%BB%9F-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:19-自主神经系统-pdf",
+      "label": "自主神经系统（交感与副交感神经）",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/19-%E8%87%AA%E4%B8%BB%E7%A5%9E%E7%BB%8F%E7%B3%BB%E7%BB%9F-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "label": "局部麻醉药：面向兽医麻醉师的全面综述",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf/",
+      "degree": 10
+    },
+    {
+      "id": "concept:糖尿病",
+      "label": "糖尿病",
+      "type": "concept",
+      "category": "概念",
+      "degree": 4
+    },
+    {
+      "id": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "label": "局部麻醉药：药理、剂量、毒性、并发症与安全性",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx/",
+      "degree": 19
+    },
+    {
+      "id": "doc:2-前肢骨骼-pdf",
+      "label": "前肢骨骼",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/2-%E5%89%8D%E8%82%A2%E9%AA%A8%E9%AA%BC-pdf/",
+      "degree": 0
+    },
+    {
+      "id": "doc:2-前肢骨骼-中英双语版-pdf",
+      "label": "前肢骨骼（中英双语版）",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/2-%E5%89%8D%E8%82%A2%E9%AA%A8%E9%AA%BC-%E4%B8%AD%E8%8B%B1%E5%8F%8C%E8%AF%AD%E7%89%88-pdf/",
+      "degree": 0
+    },
+    {
+      "id": "doc:20-臂丛和腰荐丛-pdf",
+      "label": "神经系统——臂丛与腰荐丛（周围神经解剖）",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/20-%E8%87%82%E4%B8%9B%E5%92%8C%E8%85%B0%E8%8D%90%E4%B8%9B-pdf/",
+      "degree": 13
+    },
+    {
+      "id": "doc:21-脑神经-pdf",
+      "label": "神经系统：脑神经（）《脑神经（Nervi craniales）》— 12 对脑神经组",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/21-%E8%84%91%E7%A5%9E%E7%BB%8F-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "label": "兽医区域麻醉中的超声基础与穿刺针引导",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/3-ultrasound-fundamentals-and-needle-guidance-pdf/",
+      "degree": 14
+    },
+    {
+      "id": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "label": "超声基础与穿刺针引导",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/3-ultrasound-fundamentals-and-needle-guidance-pptx/",
+      "degree": 14
+    },
+    {
+      "id": "doc:3-后肢骨骼-pdf",
+      "label": "后肢骨骼",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/3-%E5%90%8E%E8%82%A2%E9%AA%A8%E9%AA%BC-pdf/",
+      "degree": 0
+    },
+    {
+      "id": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "label": "犬猫前肢解剖与神经阻滞",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf/",
+      "degree": 18
+    },
+    {
+      "id": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "label": "犬猫前肢解剖与神经阻滞",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx/",
+      "degree": 18
+    },
+    {
+      "id": "doc:4-关节和肌肉学-pdf",
+      "label": "关节学和肌肉学总论",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/4-%E5%85%B3%E8%8A%82%E5%92%8C%E8%82%8C%E8%82%89%E5%AD%A6-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "label": "犬猫的 TAP、RSB、锯肌平面与肋间神经阻滞：躯干部区域麻醉实用指南",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf/",
+      "degree": 18
+    },
+    {
+      "id": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "label": "犬猫 TAP、腹直肌鞘、锯肌平面与肋间神经阻滞",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx/",
+      "degree": 18
+    },
+    {
+      "id": "doc:5-前肢带和后肢带肌肉-pdf",
+      "label": "胸带肌与盆带肌",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/5-%E5%89%8D%E8%82%A2%E5%B8%A6%E5%92%8C%E5%90%8E%E8%82%A2%E5%B8%A6%E8%82%8C%E8%82%89-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:6-esp-block-and-neuraxial-anesthesia-pdf",
+      "label": "竖脊肌平面阻滞与椎管内麻醉：机制、超声解剖与临床应用",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/6-esp-block-and-neuraxial-anesthesia-pdf/",
+      "degree": 7
+    },
+    {
+      "id": "concept:休克",
+      "label": "休克",
+      "type": "concept",
+      "category": "概念",
+      "degree": 8
+    },
+    {
+      "id": "concept:X线检查",
+      "label": "X线检查",
+      "type": "concept",
+      "category": "概念",
+      "degree": 7
+    },
+    {
+      "id": "concept:胰腺炎",
+      "label": "胰腺炎",
+      "type": "concept",
+      "category": "概念",
+      "degree": 6
+    },
+    {
+      "id": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "label": "ESP 阻滞与椎管内麻醉",
+      "type": "doc",
+      "category": "超声引导局部麻醉",
+      "url": "/docs/6-esp-block-and-neuraxial-anesthesia-pptx/",
+      "degree": 19
+    },
+    {
+      "id": "doc:6-前肢肌肉-近端-pdf",
+      "label": "前肢（近端）肌肉与关节",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/6-%E5%89%8D%E8%82%A2%E8%82%8C%E8%82%89-%E8%BF%91%E7%AB%AF-pdf/",
+      "degree": 0
+    },
+    {
+      "id": "doc:7-前肢肌肉-远端-pdf",
+      "label": "前肢（远端）肌肉与关节",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/7-%E5%89%8D%E8%82%A2%E8%82%8C%E8%82%89-%E8%BF%9C%E7%AB%AF-pdf/",
+      "degree": 0
+    },
+    {
+      "id": "doc:7-前肢肌肉-远端-中英双语版-pdf",
+      "label": "前肢（远端）肌肉与关节（中英双语版）",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/7-%E5%89%8D%E8%82%A2%E8%82%8C%E8%82%89-%E8%BF%9C%E7%AB%AF-%E4%B8%AD%E8%8B%B1%E5%8F%8C%E8%AF%AD%E7%89%88-pdf/",
+      "degree": 0
+    },
+    {
+      "id": "doc:8-新后肢肌肉-近端-pdf",
+      "label": "后肢近端肌肉与关节",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/8-%E6%96%B0%E5%90%8E%E8%82%A2%E8%82%8C%E8%82%89-%E8%BF%91%E7%AB%AF-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:9新后肢肌肉-远端-pdf",
+      "label": "后肢远端肌肉与关节",
+      "type": "doc",
+      "category": "解剖",
+      "url": "/docs/9%E6%96%B0%E5%90%8E%E8%82%A2%E8%82%8C%E8%82%89-%E8%BF%9C%E7%AB%AF-pdf/",
+      "degree": 1
+    },
+    {
+      "id": "doc:曾disorders-of-cerebrospinal-fluid-pptx",
+      "label": "脑脊液循环障碍",
+      "type": "doc",
+      "category": "神经学课件",
+      "url": "/docs/%E6%9B%BEdisorders-of-cerebrospinal-fluid-pptx/",
+      "degree": 1
+    },
+    {
+      "id": "doc:曾introduction-to-basic-neuroanatomy-pptx",
+      "label": "基础神经解剖学导论",
+      "type": "doc",
+      "category": "神经学课件",
+      "url": "/docs/%E6%9B%BEintroduction-to-basic-neuroanatomy-pptx/",
+      "degree": 0
+    },
+    {
+      "id": "doc:示例-急性肾损伤",
+      "label": "示例：犬急性肾损伤的初步评估",
+      "type": "doc",
+      "category": "急诊与重症",
+      "url": "/docs/%E7%A4%BA%E4%BE%8B-%E6%80%A5%E6%80%A7%E8%82%BE%E6%8D%9F%E4%BC%A4/",
+      "degree": 22
+    },
+    {
+      "id": "concept:急性肾损伤",
+      "label": "急性肾损伤",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:肌酐",
+      "label": "肌酐",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:尿素氮",
+      "label": "尿素氮",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:脱水",
+      "label": "脱水",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:临床病理学",
+      "label": "临床病理学",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:酸中毒",
+      "label": "酸中毒",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:高钾血症",
+      "label": "高钾血症",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    },
+    {
+      "id": "concept:输液疗法",
+      "label": "输液疗法",
+      "type": "concept",
+      "category": "概念",
+      "degree": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "concept:血液学",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "concept:血液学",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:10-新咀嚼肌-呼吸肌-腹壁肌-腹股沟管-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:11-心脏-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:12-血液循环-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:13-新主动脉和腔静脉-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:15-后肢血供-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:16-颅骨-1-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "concept:解剖",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "concept:头颈部",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "concept:血液供应",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "concept:甲状腺",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:18-淋巴系统-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:19-自主神经系统-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "target": "concept:糖尿病",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "concept:糖尿病",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:21-脑神经-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:4-关节和肌肉学-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:5-前肢带和后肢带肌肉-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pdf",
+      "target": "concept:休克",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pdf",
+      "target": "concept:X线检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pdf",
+      "target": "concept:甲状腺",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pdf",
+      "target": "concept:胰腺炎",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "target": "concept:休克",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "target": "concept:猫",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "target": "concept:X线检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "target": "concept:甲状腺",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "target": "concept:胰腺炎",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:8-新后肢肌肉-近端-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:9新后肢肌肉-远端-pdf",
+      "target": "concept:肝功能",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:曾disorders-of-cerebrospinal-fluid-pptx",
+      "target": "concept:X线检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:急性肾损伤",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:肌酐",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:尿素氮",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:脱水",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:犬",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:临床病理学",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:休克",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:酸中毒",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:高钾血症",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:超声检查",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:输液疗法",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "doc:示例-急性肾损伤",
+      "target": "concept:血液学",
+      "weight": 1,
+      "kind": "doc-concept"
+    },
+    {
+      "source": "concept:血液学",
+      "target": "concept:超声检查",
+      "weight": 3,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:肝功能",
+      "target": "concept:超声检查",
+      "weight": 8,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:肝功能",
+      "target": "concept:血液学",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:犬",
+      "target": "concept:猫",
+      "weight": 11,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:犬",
+      "target": "concept:肝功能",
+      "weight": 8,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:犬",
+      "target": "concept:甲状腺",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:猫",
+      "target": "concept:肝功能",
+      "weight": 8,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:猫",
+      "target": "concept:甲状腺",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:甲状腺",
+      "target": "concept:肝功能",
+      "weight": 3,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:糖尿病",
+      "target": "concept:超声检查",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:糖尿病",
+      "target": "concept:肝功能",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:猫",
+      "target": "concept:超声检查",
+      "weight": 7,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:犬",
+      "target": "concept:超声检查",
+      "weight": 8,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:X线检查",
+      "target": "concept:休克",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:休克",
+      "target": "concept:肝功能",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:休克",
+      "target": "concept:甲状腺",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:休克",
+      "target": "concept:胰腺炎",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:X线检查",
+      "target": "concept:肝功能",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:X线检查",
+      "target": "concept:甲状腺",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:X线检查",
+      "target": "concept:胰腺炎",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:肝功能",
+      "target": "concept:胰腺炎",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:甲状腺",
+      "target": "concept:胰腺炎",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "concept:休克",
+      "target": "concept:犬",
+      "weight": 2,
+      "kind": "concept-concept"
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "doc:1-introduction-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "血液学",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pdf",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "血液学"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:1-introduction-pptx",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "血液学"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:17-头颈部血供-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:20-臂丛和腰荐丛-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:14-前肢血供-pdf",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:20-臂丛和腰荐丛-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "肝功能",
+        "甲状腺"
+      ]
+    },
+    {
+      "source": "doc:17-头颈部血供-pdf",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "猫",
+        "肝功能",
+        "甲状腺"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "target": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能",
+        "糖尿病"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:20-臂丛和腰荐丛-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:2-local-anesthetics-pharmacology-dosing-toxicity-complications-and-safety-pptx",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:20-臂丛和腰荐丛-pdf",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pdf",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬"
+      ]
+    },
+    {
+      "source": "doc:3-ultrasound-fundamentals-and-needle-guidance-pptx",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pdf",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:4-forelimb-anatomy-and-nerve-blocks-in-dogs-and-cats-pptx",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "target": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "weight": 4,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "超声检查",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pdf",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 3,
+      "kind": "doc-doc",
+      "shared": [
+        "猫",
+        "犬",
+        "肝功能"
+      ]
+    },
+    {
+      "source": "doc:5-tap-rsb-serratus-plane-and-intercostal-blocks-pptx",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "犬",
+        "超声检查"
+      ]
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pdf",
+      "target": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "weight": 5,
+      "kind": "doc-doc",
+      "shared": [
+        "休克",
+        "X线检查",
+        "肝功能",
+        "甲状腺",
+        "胰腺炎"
+      ]
+    },
+    {
+      "source": "doc:6-esp-block-and-neuraxial-anesthesia-pptx",
+      "target": "doc:示例-急性肾损伤",
+      "weight": 2,
+      "kind": "doc-doc",
+      "shared": [
+        "休克",
+        "犬"
+      ]
+    }
+  ]
+}

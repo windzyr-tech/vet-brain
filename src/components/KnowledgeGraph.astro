@@ -1,0 +1,235 @@
+<div class="graph-toolbar">
+  <select id="graph-category" aria-label="按分类筛选">
+    <option value="">全部分类</option>
+  </select>
+  <input id="graph-filter" type="search" placeholder="筛选节点名称…" aria-label="筛选节点" />
+  <button id="graph-reset" class="btn" style="background: var(--accent-soft); color: var(--accent-dark);">重置视图</button>
+</div>
+
+<div class="graph-wrap" id="graph-wrap">
+  <svg id="graph-svg" role="img" aria-label="兽医知识图谱"></svg>
+  <div class="graph-tooltip" id="graph-tooltip"></div>
+</div>
+
+<script>
+  import * as d3 from 'd3';
+
+  type GNode = d3.SimulationNodeDatum & {
+    id: string;
+    label: string;
+    type: 'doc' | 'concept';
+    category: string;
+    url?: string;
+    degree: number;
+  };
+  type GLink = d3.SimulationLinkDatum<GNode> & {
+    weight: number;
+    kind: string;
+    shared?: string[];
+  };
+  type GraphData = { nodes: GNode[]; edges: GLink[] };
+
+  const wrap = document.getElementById('graph-wrap') as HTMLElement;
+  const svg = d3.select<SVGSVGElement, unknown>('#graph-svg');
+  const tooltip = d3.select<HTMLDivElement, unknown>('#graph-tooltip');
+  const categorySelect = document.getElementById('graph-category') as HTMLSelectElement;
+  const filterInput = document.getElementById('graph-filter') as HTMLInputElement;
+  const resetButton = document.getElementById('graph-reset') as HTMLButtonElement;
+
+  let graph: GraphData = { nodes: [], edges: [] };
+  let zoomBehavior: d3.ZoomBehavior<SVGSVGElement, unknown> | null = null;
+  let simulation: d3.Simulation<GNode, GLink> | null = null;
+
+  const nodeId = (value: string | number | GNode) => (typeof value === 'object' ? value.id : String(value));
+  const radius = (node: GNode) => (node.type === 'doc' ? 11 : 6) + Math.min(6, (node.degree || 0) / 3);
+
+  function colorFor(node: GNode) {
+    if (node.type === 'concept') return '#e59a34';
+    const scale = d3.scaleOrdinal<string, string>(d3.schemeTableau10);
+    return scale(node.category || '未分类');
+  }
+
+  function neighborsOf(id: string) {
+    const set = new Set<string>([id]);
+    for (const edge of graph.edges) {
+      const s = nodeId(edge.source);
+      const t = nodeId(edge.target);
+      if (s === id) set.add(t);
+      if (t === id) set.add(s);
+    }
+    return set;
+  }
+
+  function filteredData() {
+    const category = categorySelect.value;
+    const term = filterInput.value.trim().toLowerCase();
+
+    let nodes = graph.nodes;
+    if (category) {
+      const docIds = new Set(nodes.filter((n) => n.type === 'doc' && n.category === category).map((n) => n.id));
+      nodes = nodes.filter((n) => (n.type === 'doc' ? docIds.has(n.id) : graph.edges.some((e) => {
+        const s = nodeId(e.source);
+        const t = nodeId(e.target);
+        return docIds.has(s) && t === n.id;
+      })));
+    }
+    if (term) {
+      const matched = nodes.filter((n) => n.label.toLowerCase().includes(term));
+      const keep = new Set<string>();
+      for (const node of matched) for (const id of neighborsOf(node.id)) keep.add(id);
+      nodes = nodes.filter((n) => keep.has(n.id));
+    }
+
+    const ids = new Set(nodes.map((n) => n.id));
+    const edges = graph.edges.filter((e) => ids.has(nodeId(e.source)) && ids.has(nodeId(e.target)));
+    return { nodes, edges };
+  }
+
+  function showTooltip(event: MouseEvent, node: GNode) {
+    const [x, y] = d3.pointer(event, wrap);
+    const detail = node.type === 'doc' ? node.category : '概念节点';
+    tooltip
+      .style('left', `${x + 14}px`)
+      .style('top', `${y + 12}px`)
+      .style('opacity', '1')
+      .html(`<strong>${node.label}</strong><br><span style="opacity:.75">${detail} · ${node.degree} 条关联</span>`);
+  }
+
+  function searchConcept(name: string) {
+    const modal = document.querySelector('pagefind-modal') as any;
+    modal?.open?.();
+    const manager = (window as any).PagefindComponents?.getInstanceManager?.();
+    const instance = manager?.getInstance?.('default');
+    instance?.triggerSearch?.(name);
+  }
+
+  function render() {
+    simulation?.stop();
+    svg.selectAll('*').remove();
+
+    const raw = filteredData();
+    const nodes = raw.nodes;
+    // d3.forceLink 会把 source/target 从 id 改成节点对象；每次渲染重新克隆，避免筛选时残留旧引用。
+    const edges = raw.edges.map((edge) => ({
+      ...edge,
+      source: nodeId(edge.source),
+      target: nodeId(edge.target),
+    }));
+    const width = wrap.clientWidth || 900;
+    const height = wrap.clientHeight || 640;
+    svg.attr('viewBox', `0 0 ${width} ${height}`);
+
+    const root = svg.append('g');
+    zoomBehavior = d3.zoom<SVGSVGElement, unknown>()
+      .scaleExtent([0.15, 5])
+      .on('zoom', (event) => root.attr('transform', event.transform.toString()));
+    svg.call(zoomBehavior);
+
+    simulation = d3.forceSimulation<GNode>(nodes)
+      .force('link', d3.forceLink<GNode, GLink>(edges).id((d) => d.id)
+        .distance((d) => (d.kind === 'doc-concept' ? 62 : 105))
+        .strength((d) => Math.min(0.6, 0.15 + d.weight * 0.1)))
+      .force('charge', d3.forceManyBody<GNode>().strength((d) => (d.type === 'doc' ? -260 : -120)))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collide', d3.forceCollide<GNode>().radius((d) => radius(d) + 12));
+
+    const link = root.append('g')
+      .attr('stroke', '#c9d5cd')
+      .attr('stroke-opacity', 0.7)
+      .selectAll<SVGLineElement, GLink>('line')
+      .data(edges)
+      .join('line')
+      .attr('stroke-width', (d) => Math.min(4, 0.6 + d.weight * 0.35));
+
+    const node = root.append('g')
+      .selectAll<SVGGElement, GNode>('g')
+      .data(nodes)
+      .join('g')
+      .attr('class', 'graph-node')
+      .call(d3.drag<SVGGElement, GNode>()
+        .on('start', (event, d) => {
+          if (!event.active) simulation?.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        })
+        .on('drag', (event, d) => {
+          d.fx = event.x;
+          d.fy = event.y;
+        })
+        .on('end', (event, d) => {
+          if (!event.active) simulation?.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        }));
+
+    node.append('circle')
+      .attr('r', (d) => radius(d))
+      .attr('fill', (d) => colorFor(d))
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 1.5);
+
+    node.filter((d) => d.type === 'doc' || d.degree >= 4)
+      .append('text')
+      .attr('x', (d) => radius(d) + 6)
+      .attr('y', 4)
+      .text((d) => d.label.length > 18 ? `${d.label.slice(0, 17)}…` : d.label);
+
+    node.on('mouseover', (event: MouseEvent, d: GNode) => showTooltip(event, d))
+      .on('mousemove', (event: MouseEvent, d: GNode) => showTooltip(event, d))
+      .on('mouseout', () => tooltip.style('opacity', '0'))
+      .on('click', (_event, d: GNode) => {
+        if (d.type === 'doc') {
+          if (d.url) window.location.href = d.url;
+        } else {
+          const active = neighborsOf(d.id);
+          node.attr('opacity', (n) => (active.has(n.id) ? 1 : 0.18));
+          link.attr('stroke-opacity', (l) => {
+            const s = nodeId(l.source);
+            const t = nodeId(l.target);
+            return s === d.id || t === d.id ? 1 : 0.08;
+          });
+          searchConcept(d.label);
+        }
+      });
+
+    simulation.on('tick', () => {
+      link
+        .attr('x1', (d) => (d.source as unknown as GNode).x || 0)
+        .attr('y1', (d) => (d.source as unknown as GNode).y || 0)
+        .attr('x2', (d) => (d.target as unknown as GNode).x || 0)
+        .attr('y2', (d) => (d.target as unknown as GNode).y || 0);
+      node.attr('transform', (d) => `translate(${d.x || 0},${d.y || 0})`);
+    });
+  }
+
+  async function init() {
+    try {
+      const response = await fetch(`${import.meta.env.BASE_URL}graph-data.json`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      graph = await response.json();
+
+      for (const category of [...new Set(graph.nodes.filter((n) => n.type === 'doc').map((n) => n.category))].sort()) {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        categorySelect.appendChild(option);
+      }
+
+      categorySelect.addEventListener('change', render);
+      filterInput.addEventListener('input', render);
+      resetButton.addEventListener('click', () => {
+        categorySelect.value = '';
+        filterInput.value = '';
+        render();
+        if (zoomBehavior) svg.transition().duration(400).call(zoomBehavior.transform, d3.zoomIdentity);
+      });
+
+      render();
+    } catch (error) {
+      wrap.innerHTML = '<p style="padding:24px;color:var(--muted)">图谱数据加载失败，请先运行 <code>npm run graph</code>。</p>';
+      console.error('[graph]', error);
+    }
+  }
+
+  init();
+</script>

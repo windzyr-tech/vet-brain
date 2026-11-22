@@ -1,0 +1,36 @@
+{
+  "sources": [
+    {
+      "name": "我的资料",
+      "enabled": false,
+      "path": "~/Documents/VetBrain-Sources",
+      "category": "未分类",
+      "useSubfolderAsCategory": true,
+      "include": ["**/*.pdf", "**/*.docx", "**/*.pptx"],
+      "exclude": ["**/~$*", "**/.DS_Store"],
+      "recursive": true,
+      "tags": [],
+      "concepts": [],
+      "keepOriginal": false
+    }
+  ],
+  "scan": {
+    "stateFile": ".cache/scan-state.json",
+    "outputDir": "content/synced",
+    "onDeleted": "remove",
+    "minSizeKB": 1
+  },
+  "schedule": {
+    "enabled": false,
+    "weekday": 6,
+    "hour": 10,
+    "minute": 0,
+    "label": "com.vetbrain.sync",
+    "runAtLoad": false
+  },
+  "git": {
+    "autoPush": false,
+    "branch": "main",
+    "commitPrefix": "chore(sync): "
+  }
+}

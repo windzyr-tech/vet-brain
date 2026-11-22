@@ -1,0 +1,36 @@
+{
+  "sources": [
+    {
+      "name": "vetBrain",
+      "enabled": true,
+      "path": "~/Desktop/vetBrain",
+      "category": "vetBrain",
+      "useSubfolderAsCategory": true,
+      "include": ["**/*.pdf", "**/*.docx", "**/*.pptx"],
+      "exclude": ["**/~$*", "**/.DS_Store"],
+      "recursive": true,
+      "tags": [],
+      "concepts": [],
+      "keepOriginal": false
+    }
+  ],
+  "scan": {
+    "stateFile": ".cache/scan-state.json",
+    "outputDir": "content/synced",
+    "onDeleted": "remove",
+    "minSizeKB": 1
+  },
+  "schedule": {
+    "enabled": true,
+    "weekday": 6,
+    "hour": 10,
+    "minute": 0,
+    "label": "com.vetbrain.sync",
+    "runAtLoad": false
+  },
+  "git": {
+    "autoPush": true,
+    "branch": "main",
+    "commitPrefix": "chore(sync): "
+  }
+}

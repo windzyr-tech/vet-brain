@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+
+# 由 scripts/ingest.mjs 生成，始终从 content/raw 与 content/manual 重建
+src/content/docs/
+public/files/
+.cache/
