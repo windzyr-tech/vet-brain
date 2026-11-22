@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "pnpm run generate && astro dev",
     "convert": "node scripts/convert.mjs",
-    "watch": "node scripts/watch.mjs",
     "sync": "node scripts/sync.mjs",
     "sync:build": "pnpm run sync && pnpm run build",
     "sync:install": "node scripts/install-schedule.mjs",

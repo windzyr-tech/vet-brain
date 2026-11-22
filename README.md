@@ -121,17 +121,17 @@ pnpm run sync:install -- --uninstall # 卸载定时任务
 
 在 OpenCode 中打开本项目后即可加载使用。
 
-## 自动监听本地文件夹
+## 定时扫描本地文件夹
 
-不需要手动上传。把 PDF / Word / PPTX 放进根配置 `sources[].path` 指定的本地文件夹即可：
+把 PDF / Word / PPTX 放进根配置 `sources[].path` 指定的本地文件夹即可：
 
 ```bash
-pnpm run watch           # 前台监听，每 60 秒检查一次（间隔可在 config 的 watch.intervalSeconds 修改）
-pnpm run sync:install    # 安装为 macOS 后台服务，开机自启、持续监听 + 每周六定时兜底
-pnpm run watch -- --once # 只检查一次，用于测试
+pnpm run sync -- --no-push   # 手动扫描一次，不推送
+pnpm run sync:install        # 安装 macOS 每周定时任务（每周六 10:00）
+pnpm run sync:install -- --uninstall  # 卸载定时任务
 ```
 
-发现新增或修改文件时，会自动执行 `pnpm run sync:build` → commit + push → Cloudflare Pages 发布。源文件被移动或删除不会触发内容删除。
+到时间后自动执行增量扫描 → commit + push → Cloudflare Pages 发布。源文件被移动或删除不会触发内容删除。
 
 ## 移除内容
 
