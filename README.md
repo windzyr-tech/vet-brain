@@ -121,6 +121,26 @@ pnpm run sync:install -- --uninstall # 卸载定时任务
 
 在 OpenCode 中打开本项目后即可加载使用。
 
+## 上传新文档（收件箱）
+
+网站是静态的，没有服务端上传接口。新增资料请用本地收件箱：
+
+```bash
+# 1. 把 PDF / Word / PPTX 放进 content/inbox/
+# 2. 执行
+pnpm run upload
+# 或处理指定文件：pnpm run upload -- path/to/a.pdf
+# 只看结果不推送：pnpm run upload -- --no-push
+```
+
+`upload` 会自动完成：
+
+1. **转换**：把 PDF / DOCX / PPTX 转成站点可渲染的 Markdown
+2. **校验与去重**：正文过短、缺乏专业内容、与现有文档完全重复或高度相似的文件会被跳过，并打印原因
+3. **入库与刷新**：有效文档写入 `content/raw/新上传/` → 重建站点与检索索引 → 自动 commit + push → Cloudflare Pages 自动发布
+
+被跳过的文件会留在收件箱，确认后自行删除或补充同名 `.meta.json` 再试。
+
 ## Word / PDF 转换层
 
 Word 和 PDF 的转换逻辑集中在 `scripts/extractors.mjs`，摄取流程在 `scripts/ingest.mjs`。转换结果（Markdown）会同时供**知识图谱生成**和**Pagefind 检索索引**使用，所以转换质量直接决定检索与图谱效果。

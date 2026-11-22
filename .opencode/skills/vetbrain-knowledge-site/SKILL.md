@@ -24,7 +24,7 @@ description: 把本地 PDF / Word / PPTX 文档做成可检索、带知识图谱
 ## 何时使用
 
 - 用户说「建一个收录我文档的网站 / 知识库」「加检索 / 知识图谱」
-- 用户要「定时扫描某个本地文件夹」「增量更新」「push 后线上自动更新」
+- 用户说「上传一个文档」「新加一份资料」「定时扫描某个本地文件夹」「增量更新」「push 后线上自动更新」
 - 用户要支持新的文档格式（PDF、Word、PPTX）
 - 用户要处理英文文档时，转交 `vet-translation` skill
 - 用户说文档格式不统一、缺标题/摘要/目录时，转交 `doc-format-guard` skill
@@ -39,11 +39,12 @@ description: 把本地 PDF / Word / PPTX 文档做成可检索、带知识图谱
    - `templates/data/*.json` → `<项目根>/data/`
 2. **改配置**：编辑根配置的 `sources[].path`（支持 `~`）、`include`、`category` / `useSubfolderAsCategory`、`schedule`、`git.autoPush`。详见 `references/config-schema.md`。
 3. **先扫一遍**：`pnpm run sync -- --no-push`，确认 `content/synced/*.md` 数量、分类、正文质量。
-4. **处理英文文档**：运行 `pnpm run translate:pending` 得到清单，然后加载 `vet-translation` skill 逐篇翻译；本 skill 不直接翻译。
-5. **格式校验**：`pnpm run format:check`，必要时 `pnpm run format:fix`（由 `doc-format-guard` skill 负责细节）。
-6. **构建验证**：`pnpm run build` 与 `pnpm run check`，确认 Pagefind 索引页数、图谱节点/边数正常。
-7. **布置定时**：`pnpm run sync:install`（macOS launchd）。
-8. **上线**：确认后 `git add . && git commit && git push`；或开启 `git.autoPush` 让下次扫描自动推送。
+4. **处理用户上传的文档**：把文件放进 `content/inbox/`，运行 `pnpm run upload`；脚本会转换、校验专业性、去重、入库、重建并推送。详见 `references/upload.md`。
+5. **处理英文文档**：运行 `pnpm run translate:pending` 得到清单，然后加载 `vet-translation` skill 逐篇翻译；本 skill 不直接翻译。
+6. **格式校验**：`pnpm run format:check`，必要时 `pnpm run format:fix`（由 `doc-format-guard` skill 负责细节）。
+7. **构建验证**：`pnpm run build` 与 `pnpm run check`，确认 Pagefind 索引页数、图谱节点/边数正常。
+8. **布置定时**：`pnpm run sync:install`（macOS launchd）。
+9. **上线**：确认后 `git add . && git commit && git push`；或开启 `git.autoPush` 让下次扫描自动推送。
 
 ## 关键文件
 
