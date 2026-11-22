@@ -11,7 +11,7 @@
 content/synced/*.md   ← 会被 Git 跟踪的「已转换文档」
         │  git commit + push
         ▼
-Cloudflare Pages（由 GitHub Actions 触发）
+Cloudflare Pages（Git 集成自动构建）
         │  pnpm run build
         ▼
 ingest → graph → astro → pagefind
@@ -25,7 +25,7 @@ data/concepts.json 是概念词典，决定图谱节点与关键词抽取。
 
 - **检索**：Pagefind 构建中文索引，浏览器端查询，不需要搜索服务。
 - **图谱**：构建时从文档中抽取概念与共现关系，D3 力导向图在浏览器渲染。
-- **定时**：本地文件夹只有你的 Mac 能访问，所以「扫描」由本机定时任务完成；「构建部署」由 push 触发的 GitHub Actions 完成。
+- **定时**：本地文件夹只有你的 Mac 能访问，所以「扫描」由本机定时任务完成；「构建部署」由 push 触发 Cloudflare Pages 自动完成。
 
 ## 本地开发
 
@@ -109,7 +109,7 @@ pnpm run sync:install -- --uninstall # 卸载定时任务
 
 增量判断基于 **SHA-256 文件内容哈希 + 文件大小**，所以没变化的文件不会重复转换；源文件被删除时，对应生成文档也会移除。
 
-> 注意：GitHub Actions 读不到你本机的文件夹，所以扫描必须在本地跑。安装 `pnpm run sync:install` 后，每天到点会自动扫描、提交并 push；Cloudflare Pages 收到 push 就重建。这样你下次打开网站看到的就是最新内容。
+> 注意：Cloudflare Pages 读不到你本机的文件夹，所以扫描必须在本地跑。安装 `pnpm run sync:install` 后，每周六 10:00 会自动扫描、提交并 push；Cloudflare Pages 收到 push 就重建。这样你下次打开网站看到的就是最新内容。
 
 ## 配套 OpenCode 技能
 
@@ -180,11 +180,10 @@ pnpm run convert                                # 转换全部 Word / PDF
 
 1. 把项目推送到你的 GitHub 仓库（当前远程：`https://github.com/windzyr-tech/vet-brain.git`）。
 2. 在 Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git 选择该仓库。安装命令填 `pnpm install --frozen-lockfile`，构建命令填 `pnpm run build`，输出目录 `dist`，Node 版本 24（或设置环境变量 `NODE_VERSION=24`）。
-3. 在 GitHub 仓库 Settings → Secrets and variables → Actions 添加：
-   - `CLOUDFLARE_API_TOKEN`（权限：Account → Cloudflare Pages:Edit，Account → Account Settings:Read）
-   - `CLOUDFLARE_ACCOUNT_ID`
-4. `.github/workflows/deploy.yml` 会在 push、手动触发以及每天定时运行，重新生成索引与图谱并部署。
-5. 如有自定义域名，修改 `astro.config.mjs` 中的 `site` 或设置 `SITE_URL` 环境变量。
+3. 环境变量设置 `NODE_VERSION=24`；首次部署后再加 `SITE_URL=https://vet-brain.pages.dev`（或你的自定义域名）。
+4. 点击 Save and Deploy。之后每次 push 到 `main`，Cloudflare Pages 都会自动重建并发布。
+5. 本项目采用 Cloudflare Pages 的 Git 集成，无需 GitHub Actions；GitHub Actions 相关配置已移除。
+6. 如有自定义域名，修改 `astro.config.mjs` 中的 `site` 或设置 `SITE_URL` 环境变量。
 
 ## 常用命令
 
