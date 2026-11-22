@@ -1,10 +1,10 @@
 /**
- * 根据根配置 vetbrain.config.json 的 schedule 段，安装/卸载 macOS 定时任务。
+ * 根据根配置安装 / 卸载两个 macOS 后台任务：
+ *   - watch：持续监听配置里的本地文件夹，发现变化立即同步
+ *   - schedule：每周定时全量同步（兜底）
  *
- *   pnpm run sync:install          安装（每天按配置时间运行 pnpm run sync）
- *   pnpm run sync:install -- --uninstall 卸载
- *
- * 非 macOS 环境会打印等价的 crontab 写法。
+ *   pnpm run sync:install
+ *   pnpm run sync:install -- --uninstall
  */
 import { execFile } from 'node:child_process';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
@@ -44,46 +44,18 @@ async function run(command, args, ignoreErrors = false) {
   }
 }
 
-async function main() {
-  const config = JSON.parse(await readFile(CONFIG_PATH, 'utf8'));
-  const schedule = config.schedule || {};
-  const label = schedule.label || 'com.vetbrain.sync';
-  const plistPath = path.join(os.homedir(), 'Library/LaunchAgents', `${label}.plist`);
-  const uninstall = args.includes('--uninstall');
+function plistFor({ label, command, schedule, watch, logDir }) {
+  const calendar = schedule
+    ? `<key>StartCalendarInterval</key>\n  <dict>\n${
+        schedule.weekday !== null
+          ? `    <key>Weekday</key>\n    <integer>${schedule.weekday}</integer>\n`
+          : ''
+      }    <key>Hour</key>\n    <integer>${schedule.hour}</integer>\n    <key>Minute</key>\n    <integer>${schedule.minute}</integer>\n  </dict>\n`
+    : '';
+  const keepAlive = watch ? '<key>KeepAlive</key>\n  <true/>\n' : '';
+  const runAtLoad = watch || schedule?.runAtLoad ? 'true' : 'false';
 
-  if (uninstall) {
-    if (process.platform === 'darwin') {
-      await run('launchctl', ['unload', plistPath], true);
-      await rm(plistPath, { force: true });
-    }
-    console.log(`[schedule] 已卸载 ${label}`);
-    return;
-  }
-
-  if (schedule.enabled === false) {
-    console.log('[schedule] 配置中 schedule.enabled 为 false，未安装定时任务。');
-    return;
-  }
-
-  const hour = Number(schedule.hour ?? 3);
-  const minute = Number(schedule.minute ?? 0);
-  // launchd Weekday: 0=周日, 1=周一 … 6=周六
-  const weekday = schedule.weekday === undefined ? null : Number(schedule.weekday);
-  const pnpmPath = await which('pnpm');
-  const command = `cd ${shellQuote(ROOT)} && ${shellQuote(pnpmPath)} run sync`;
-
-  if (process.platform !== 'darwin') {
-    console.log('非 macOS 系统，可手工添加 crontab：');
-    const cronDay = weekday === null ? '*' : weekday;
-    console.log(`${minute} ${hour} * * ${cronDay} cd ${ROOT} && ${pnpmPath} run sync`);
-    return;
-  }
-
-  const logDir = path.join(ROOT, '.cache/logs');
-  await mkdir(logDir, { recursive: true });
-  await mkdir(path.dirname(plistPath), { recursive: true });
-
-  const plist = `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -95,30 +67,86 @@ async function main() {
     <string>-lc</string>
     <string>${escapeXml(command)}</string>
   </array>
-  <key>StartCalendarInterval</key>
-  <dict>
-${weekday !== null ? `    <key>Weekday</key>\n    <integer>${weekday}</integer>\n` : ''}    <key>Hour</key>
-    <integer>${hour}</integer>
-    <key>Minute</key>
-    <integer>${minute}</integer>
-  </dict>
-  <key>RunAtLoad</key>
-  <${schedule.runAtLoad ? 'true' : 'false'}/>
+  ${calendar}${keepAlive}  <key>RunAtLoad</key>
+  <${runAtLoad}/>
   <key>StandardOutPath</key>
-  <string>${escapeXml(path.join(logDir, 'sync.log'))}</string>
+  <string>${escapeXml(path.join(logDir, `${watch ? 'watch' : 'sync'}.log`))}</string>
   <key>StandardErrorPath</key>
-  <string>${escapeXml(path.join(logDir, 'sync.err.log'))}</string>
+  <string>${escapeXml(path.join(logDir, `${watch ? 'watch' : 'sync'}.err.log`))}</string>
 </dict>
 </plist>
 `;
+}
 
+async function installAgent(label, plist) {
+  const plistPath = path.join(os.homedir(), 'Library/LaunchAgents', `${label}.plist`);
   await writeFile(plistPath, plist, 'utf8');
   await run('launchctl', ['unload', plistPath], true);
   await run('launchctl', ['load', plistPath]);
-  const weekdayNames = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-  const when = weekday === null ? '每天' : `每${weekdayNames[weekday] || `周${weekday}`}`;
-  console.log(`[schedule] 已安装 ${label}，${when} ${hour}:${String(minute).padStart(2, '0')} 运行。`);
-  console.log(`[schedule] 日志：${logDir}/sync.log`);
+  return plistPath;
+}
+
+async function removeAgent(label) {
+  const plistPath = path.join(os.homedir(), 'Library/LaunchAgents', `${label}.plist`);
+  await run('launchctl', ['unload', plistPath], true);
+  await rm(plistPath, { force: true });
+}
+
+async function main() {
+  const config = JSON.parse(await readFile(CONFIG_PATH, 'utf8'));
+  const schedule = config.schedule || {};
+  const watch = config.watch || {};
+  const syncLabel = schedule.label || 'com.vetbrain.sync';
+  const watchLabel = watch.label || 'com.vetbrain.watch';
+  const uninstall = args.includes('--uninstall');
+
+  if (uninstall) {
+    await removeAgent(syncLabel);
+    await removeAgent(watchLabel);
+    console.log(`[schedule] 已卸载 ${syncLabel} 与 ${watchLabel}`);
+    return;
+  }
+
+  const pnpmPath = await which('pnpm');
+  const syncCommand = `cd ${shellQuote(ROOT)} && ${shellQuote(pnpmPath)} run sync`;
+  const watchCommand = `cd ${shellQuote(ROOT)} && ${shellQuote(pnpmPath)} run watch`;
+
+  if (process.platform !== 'darwin') {
+    console.log('非 macOS 系统，可手工添加 crontab：');
+    const weekday = schedule.weekday === undefined ? '*' : schedule.weekday;
+    console.log(`${schedule.minute ?? 0} ${schedule.hour ?? 3} * * ${weekday} ${syncCommand}`);
+    console.log(`@reboot ${watchCommand}`);
+    return;
+  }
+
+  const logDir = path.join(ROOT, '.cache/logs');
+  await mkdir(logDir, { recursive: true });
+
+  if (schedule.enabled !== false) {
+    const plist = plistFor({
+      label: syncLabel,
+      command: syncCommand,
+      schedule: {
+        weekday: schedule.weekday === undefined ? null : Number(schedule.weekday),
+        hour: Number(schedule.hour ?? 3),
+        minute: Number(schedule.minute ?? 0),
+        runAtLoad: Boolean(schedule.runAtLoad),
+      },
+      logDir,
+    });
+    await installAgent(syncLabel, plist);
+    const weekdayNames = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    const when = schedule.weekday === undefined ? '每天' : `每${weekdayNames[Number(schedule.weekday)] || `周${schedule.weekday}`}`;
+    console.log(`[schedule] 已安装 ${syncLabel}，${when} ${schedule.hour}:${String(schedule.minute ?? 0).padStart(2, '0')} 运行。`);
+  }
+
+  if (watch.enabled !== false) {
+    const plist = plistFor({ label: watchLabel, command: watchCommand, watch: true, logDir });
+    await installAgent(watchLabel, plist);
+    console.log(`[schedule] 已安装 ${watchLabel}，持续监听本地文件夹，每 ${watch.intervalSeconds || 60} 秒检查一次。`);
+  }
+
+  console.log(`[schedule] 日志目录：${logDir}`);
 }
 
 main().catch((error) => {

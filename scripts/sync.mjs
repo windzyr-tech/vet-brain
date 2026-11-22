@@ -129,6 +129,21 @@ async function scanSource(source, config, state, currentKeys, outputDir, report)
 
     const rel = path.relative(dir, filePath);
     const key = `${source.name}/${rel}`;
+    const sidecar = await readSidecar(filePath);
+
+    // .meta.json 里 enabled:false 或 exclude:true 表示保留源文件，
+    // 但从知识库中移除已生成的文档。
+    if (sidecar.enabled === false || sidecar.exclude === true) {
+      const existing = state.files[key];
+      if (existing) {
+        const outputPath = path.join(ROOT, existing.output);
+        if (await exists(outputPath)) await rm(outputPath, { force: true });
+        delete state.files[key];
+        report.removed.push(rel);
+      }
+      continue;
+    }
+
     currentKeys.add(key);
 
     const hash = await hashFile(filePath);
@@ -148,7 +163,6 @@ async function scanSource(source, config, state, currentKeys, outputDir, report)
       continue;
     }
 
-    const sidecar = await readSidecar(filePath);
     const ext = path.extname(filePath).slice(1).toLowerCase();
     const slug = sidecar.slug || `${slugify(`${source.name}-${rel}`)}-${ext}`;
     const subfolder = path.relative(dir, path.dirname(filePath)).split(path.sep)[0];

@@ -121,25 +121,29 @@ pnpm run sync:install -- --uninstall # 卸载定时任务
 
 在 OpenCode 中打开本项目后即可加载使用。
 
-## 上传新文档（收件箱）
+## 自动监听本地文件夹
 
-网站是静态的，没有服务端上传接口。新增资料请用本地收件箱：
+不需要手动上传。把 PDF / Word / PPTX 放进根配置 `sources[].path` 指定的本地文件夹即可：
 
 ```bash
-# 1. 把 PDF / Word / PPTX 放进 content/inbox/
-# 2. 执行
-pnpm run upload
-# 或处理指定文件：pnpm run upload -- path/to/a.pdf
-# 只看结果不推送：pnpm run upload -- --no-push
+pnpm run watch           # 前台监听，每 60 秒检查一次（间隔可在 config 的 watch.intervalSeconds 修改）
+pnpm run sync:install    # 安装为 macOS 后台服务，开机自启、持续监听 + 每周六定时兜底
+pnpm run watch -- --once # 只检查一次，用于测试
 ```
 
-`upload` 会自动完成：
+发现新增、修改或删除文件时，会自动执行 `pnpm run sync:build` → commit + push → Cloudflare Pages 发布。
 
-1. **转换**：把 PDF / DOCX / PPTX 转成站点可渲染的 Markdown
-2. **校验与去重**：正文过短、缺乏专业内容、与现有文档完全重复或高度相似的文件会被跳过，并打印原因
-3. **入库与刷新**：有效文档写入 `content/raw/新上传/` → 重建站点与检索索引 → 自动 commit + push → Cloudflare Pages 自动发布
+## 移除内容
 
-被跳过的文件会留在收件箱，确认后自行删除或补充同名 `.meta.json` 再试。
+分三种情况：
+
+1. **从本地源文件夹删除原件**：监听器发现删除后，下次同步会自动删除对应知识文档并推送。
+2. **保留原件、只从网站隐藏**：在源文件旁的同名 `.meta.json` 里加：
+   ```json
+   { "enabled": false }
+   ```
+   下次同步会移除已生成的文档，但保留你的原始文件。改回 `true` 或删掉该字段即可重新出现。
+3. **删除手动放入 `content/raw/` 或 `content/manual/` 的文档**：直接删除文件，然后运行 `pnpm run build` 并提交推送。
 
 ## Word / PDF 转换层
 

@@ -20,6 +20,11 @@
     "onDeleted": "remove",
     "minSizeKB": 1
   },
+  "watch": {
+    "enabled": true,
+    "intervalSeconds": 60,
+    "label": "com.vetbrain.watch"
+  },
   "schedule": {
     "enabled": true,
     "weekday": 6,

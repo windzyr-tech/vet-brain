@@ -60,8 +60,10 @@
   "date": "2026-11-22",
   "slug": "aki-dog",
   "language": "en",
-  "needsTranslation": true
+  "needsTranslation": true,
+  "enabled": false
 }
 ```
 
-`language: en` 会让扫描器把文档标记为待翻译；术语统一用 `data/glossary.json`。
+- `language: en` 会让扫描器把文档标记为待翻译；术语统一用 `data/glossary.json`。
+- `enabled: false`（或 `exclude: true`）表示**保留源文件但从网站移除该文档**，下次同步生效。

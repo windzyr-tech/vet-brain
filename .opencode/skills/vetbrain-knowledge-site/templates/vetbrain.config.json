@@ -1,10 +1,10 @@
 {
   "sources": [
     {
-      "name": "我的资料",
-      "enabled": false,
-      "path": "~/Documents/VetBrain-Sources",
-      "category": "未分类",
+      "name": "vetBrain",
+      "enabled": true,
+      "path": "~/Desktop/vetBrain",
+      "category": "vetBrain",
       "useSubfolderAsCategory": true,
       "include": ["**/*.pdf", "**/*.docx", "**/*.pptx"],
       "exclude": ["**/~$*", "**/.DS_Store"],
@@ -20,8 +20,13 @@
     "onDeleted": "remove",
     "minSizeKB": 1
   },
+  "watch": {
+    "enabled": true,
+    "intervalSeconds": 60,
+    "label": "com.vetbrain.watch"
+  },
   "schedule": {
-    "enabled": false,
+    "enabled": true,
     "weekday": 6,
     "hour": 10,
     "minute": 0,
@@ -29,7 +34,7 @@
     "runAtLoad": false
   },
   "git": {
-    "autoPush": false,
+    "autoPush": true,
     "branch": "main",
     "commitPrefix": "chore(sync): "
   }
