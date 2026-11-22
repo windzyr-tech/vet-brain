@@ -27,20 +27,6 @@ const categories = [...categoryMap.entries()].sort((a, b) => b[1] - a[1]);
     </section>
 
     <section class="section">
-      <h2 class="section-title">概览</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>{docs.length}</h3>
-          <p>篇知识文档</p>
-        </div>
-        <div class="card">
-          <h3>{categories.length}</h3>
-          <p>个分类</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
       <h2 class="section-title">分类浏览</h2>
       <div class="grid">
         {categories.map(([name, count]) => (
@@ -55,7 +41,7 @@ const categories = [...categoryMap.entries()].sort((a, b) => b[1] - a[1]);
     <section class="section">
       <h2 class="section-title">最近收录</h2>
       <div class="grid">
-        {sorted.slice(0, 9).map((doc) => (
+        {sorted.slice(0, 6).map((doc) => (
           <a class="card" href={`/docs/${encodeURIComponent(doc.id)}/`}>
             <h3>{doc.data.title}</h3>
             <p>{doc.data.description || '暂无摘要'}</p>
