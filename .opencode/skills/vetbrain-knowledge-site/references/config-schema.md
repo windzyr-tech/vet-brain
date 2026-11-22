@@ -25,7 +25,7 @@
 | --- | --- |
 | `stateFile` | 扫描进度记录的位置，默认 `.cache/scan-state.json` |
 | `outputDir` | 生成文档的位置，默认 `content/synced/` |
-| `onDeleted` | `remove` 表示源文件删掉后，对应文档也移除 |
+| `onDeleted` | 默认 `keep`：源文件移动/删除不会移除已生成的文档，避免误删；只有显式设为 `remove` 才会移除 |
 | `minSizeKB` | 小于该体积的文件忽略 |
 
 ## schedule：定时设置

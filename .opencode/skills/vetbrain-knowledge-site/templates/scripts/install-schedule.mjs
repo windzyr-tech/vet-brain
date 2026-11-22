@@ -78,12 +78,26 @@ function plistFor({ label, command, schedule, watch, logDir }) {
 `;
 }
 
+function launchList() {
+  return new Promise((resolve, reject) => {
+    execFile('launchctl', ['list'], { encoding: 'utf8' }, (error, stdout) => {
+      if (error) reject(error);
+      else resolve(String(stdout));
+    });
+  });
+}
+
 async function installAgent(label, plist) {
   const plistPath = path.join(os.homedir(), 'Library/LaunchAgents', `${label}.plist`);
   await writeFile(plistPath, plist, 'utf8');
   await run('launchctl', ['unload', plistPath], true);
-  await run('launchctl', ['load', plistPath]);
-  return plistPath;
+
+  for (let attempt = 0; attempt < 3; attempt++) {
+    await run('launchctl', ['load', '-w', plistPath], true);
+    const list = await launchList();
+    if (list.includes(label)) return plistPath;
+  }
+  throw new Error(`定时任务 ${label} 加载失败，请手动执行：launchctl load -w ${plistPath}`);
 }
 
 async function removeAgent(label) {
@@ -108,8 +122,9 @@ async function main() {
   }
 
   const pnpmPath = await which('pnpm');
+  const nodePath = await which('node');
   const syncCommand = `cd ${shellQuote(ROOT)} && ${shellQuote(pnpmPath)} run sync`;
-  const watchCommand = `cd ${shellQuote(ROOT)} && ${shellQuote(pnpmPath)} run watch`;
+  const watchCommand = `cd ${shellQuote(ROOT)} && ${shellQuote(nodePath)} ${shellQuote(path.join(ROOT, 'scripts/watch.mjs'))}`;
 
   if (process.platform !== 'darwin') {
     console.log('非 macOS 系统，可手工添加 crontab：');

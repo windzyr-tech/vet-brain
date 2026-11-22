@@ -1,6 +1,7 @@
 /**
  * 自动监听 vetbrain.config.json 里配置的本地文件夹。
- * 发现新增 / 修改 / 删除文件时，自动执行 pnpm run sync:build（含 commit + push）。
+ * 发现新增 / 修改文件时，自动执行 pnpm run sync:build（含 commit + push）。
+ * 源文件删除或移动不会触发删除，避免误删已有知识内容。
  *
  *   pnpm run watch            持续监听
  *   pnpm run watch -- --once  只检查一次（用于测试）
@@ -74,11 +75,10 @@ async function snapshot(config) {
 }
 
 function hasChanged(previous, current) {
+  // 只关心「新增」和「内容变化」。
+  // 源文件被移动/删除时，不触发删除逻辑，避免误删已有的知识内容。
   for (const [key, hash] of current) {
     if (previous.get(key) !== hash) return true;
-  }
-  for (const key of previous.keys()) {
-    if (!current.has(key)) return true;
   }
   return false;
 }

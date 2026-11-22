@@ -131,13 +131,13 @@ pnpm run sync:install    # 安装为 macOS 后台服务，开机自启、持续�
 pnpm run watch -- --once # 只检查一次，用于测试
 ```
 
-发现新增、修改或删除文件时，会自动执行 `pnpm run sync:build` → commit + push → Cloudflare Pages 发布。
+发现新增或修改文件时，会自动执行 `pnpm run sync:build` → commit + push → Cloudflare Pages 发布。源文件被移动或删除不会触发内容删除。
 
 ## 移除内容
 
 分三种情况：
 
-1. **从本地源文件夹删除原件**：监听器发现删除后，下次同步会自动删除对应知识文档并推送。
+1. **从本地源文件夹删除或移动原件**：默认**不会**删除知识内容（`scan.onDeleted: keep`），这是为了防止误操作导致资料丢失。需要移除时请用下面两种方式显式操作。
 2. **保留原件、只从网站隐藏**：在源文件旁的同名 `.meta.json` 里加：
    ```json
    { "enabled": false }
